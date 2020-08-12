@@ -1,0 +1,129 @@
+
+import java.util.*;
+import java.lang.Math; 
+
+public class Main{
+
+     public static void main(String []args){
+        System.out.println("Hello World");
+         Scanner scenario=new Scanner(System.in);
+         System.out.println("Please enter the scenario");
+         String input=String.valueOf(scenario.nextLine());
+         scenarioExecutor(input);
+     }
+     
+     
+     
+     public static void scenarioExecutor(String scenario)
+     {
+         
+         switch(scenario)
+         {
+                case "table":
+                       tableCalculator();
+                    break;
+                case "print integers":
+                       printInteger();
+                    break;
+                case "print cube of a number":
+                       printCube();
+                    break;
+                case "oddevencheck":
+                       oddEvenCheck();
+                    break;
+                 case "reversenumber":
+                       reverseNumber();
+                    break;
+                
+                default:
+                    System.out.println("No such method exists");
+                   break;
+        }
+         
+     }
+     
+     
+     public static void tableCalculator()
+     {
+         Scanner sc=new Scanner(System.in);
+         System.out.println("Please enter the number");
+         int number=sc.nextInt();
+         
+         System.out.println("Please enter the table limit");
+         int tablelimit=sc.nextInt();
+         
+         for(int i=1;i<=tablelimit;i++)
+         {
+             System.out.println(number + "*" + i+ "=" + (number*i));
+         } 
+         
+     }
+     
+     public static void printInteger()
+     {
+         Scanner sc=new Scanner(System.in);
+         System.out.println("Please enter the number");
+         int number=sc.nextInt();
+         
+         System.out.println("Please enter the limit");
+         int limit=sc.nextInt();
+         
+         for(int i=number;i<=limit;i++)
+         {
+             System.out.println(i);
+         } 
+         
+     }
+     
+     public static void printCube()
+     {
+         Scanner sc=new Scanner(System.in);
+         System.out.println("Please enter the number");
+         Double number=sc.nextDouble();
+         
+         System.out.println(Math.pow(number, 3));
+         
+         
+     }
+     
+     
+     public static void oddEvenCheck()
+     {
+         Scanner sc=new Scanner(System.in);
+         System.out.println("Please enter the number");
+         int number=sc.nextInt();
+         
+         Boolean evenflag=number%2==0?true:false;
+         if(evenflag)
+         {
+             System.out.println("number is even"); 
+         }
+         else
+         {
+             System.out.println("number is odd");
+         }
+  
+     }
+     
+     public static void reverseNumber()
+     {
+         Scanner sc=new Scanner(System.in);
+         System.out.println("Please enter the number");
+         long number=sc.nextLong();
+         
+         long quotient=1; long remainder=0; long temp=0;
+         String rev="";
+         while(number>0)
+         {
+             remainder=number%10;
+             quotient=number/10;
+             rev=rev+String.valueOf(remainder);
+             number=quotient;
+
+         }
+             System.out.println(rev);
+  
+     }
+     
+     
+}
